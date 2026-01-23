@@ -1,0 +1,147 @@
+---
+// Navigation Component
+---
+
+<nav class="fixed top-0 w-full z-50 px-4 md:px-10 py-4">
+  <div class="max-w-6xl mx-auto flex items-center justify-between glass-card rounded-xl px-6 py-3 border border-white/10">
+    <div class="flex items-center gap-3">
+      <div class="size-8 bg-primary rounded-lg flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-xl">rocket_launch</span>
+      </div>
+      <span class="font-bold text-lg tracking-tight">PABLOGF.DEV</span>
+    </div>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#about">About</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#experience">Experience</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#tech">Tech</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#projects">Projects</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-all text-xs font-bold uppercase tracking-wider">
+        <span>EN</span>
+        <span class="opacity-30">/</span>
+        <span class="opacity-50">ES</span>
+      </button>
+      <button class="hidden md:block p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all">
+        <span class="material-symbols-outlined text-[20px]">dark_mode</span>
+      </button>
+      <!-- Botón Hamburguesa (Mobile) -->
+      <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all" aria-label="Toggle menu">
+        <span class="material-symbols-outlined text-[24px]">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Menú Mobile -->
+<div id="mobile-menu" class="fixed inset-0 z-[60] md:hidden pointer-events-none">
+  <!-- Overlay -->
+  <div id="mobile-menu-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+  
+  <!-- Panel del menú -->
+  <div id="mobile-menu-panel" class="absolute top-0 right-0 h-full w-[280px] glass-card border-l border-white/10 transform translate-x-full transition-transform duration-300 ease-out">
+    <div class="flex flex-col h-full p-6">
+      <!-- Header del menú -->
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center gap-3">
+          <div class="size-8 bg-primary rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-white text-xl">rocket_launch</span>
+          </div>
+          <span class="font-bold text-lg tracking-tight">MENU</span>
+        </div>
+        <button id="mobile-menu-close" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all" aria-label="Close menu">
+          <span class="material-symbols-outlined text-[24px]">close</span>
+        </button>
+      </div>
+      
+      <!-- Links de navegación -->
+      <nav class="flex flex-col gap-4 mb-8">
+        <a class="mobile-menu-link text-base font-medium hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-white/5" href="#">
+          <span class="material-symbols-outlined text-xl inline-block mr-3 align-middle">home</span>
+          Home
+        </a>
+        <a class="mobile-menu-link text-base font-medium hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-white/5" href="#about">
+          <span class="material-symbols-outlined text-xl inline-block mr-3 align-middle">person</span>
+          About
+        </a>
+        <a class="mobile-menu-link text-base font-medium hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-white/5" href="#experience">
+          <span class="material-symbols-outlined text-xl inline-block mr-3 align-middle">work</span>
+          Experience
+        </a>
+        <a class="mobile-menu-link text-base font-medium hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-white/5" href="#tech">
+          <span class="material-symbols-outlined text-xl inline-block mr-3 align-middle">code</span>
+          Tech Stack
+        </a>
+        <a class="mobile-menu-link text-base font-medium hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-white/5" href="#projects">
+          <span class="material-symbols-outlined text-xl inline-block mr-3 align-middle">folder</span>
+          Projects
+        </a>
+        <a class="mobile-menu-link text-base font-medium hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-white/5" href="#contact">
+          <span class="material-symbols-outlined text-xl inline-block mr-3 align-middle">mail</span>
+          Contact
+        </a>
+      </nav>
+      
+      <!-- Botones de idioma y tema -->
+      <div class="mt-auto space-y-3">
+        <button class="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all text-sm font-bold uppercase tracking-wider">
+          <span>EN</span>
+          <span class="opacity-30">/</span>
+          <span class="opacity-50">ES</span>
+        </button>
+        <button class="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all">
+          <span class="material-symbols-outlined text-[20px]">dark_mode</span>
+          <span class="text-sm font-medium">Dark Mode</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Mobile Menu Toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+  const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+  function openMenu() {
+    mobileMenu?.classList.remove('pointer-events-none');
+    mobileMenu?.classList.add('pointer-events-auto');
+    mobileMenuOverlay?.classList.remove('opacity-0');
+    mobileMenuOverlay?.classList.add('opacity-100');
+    mobileMenuPanel?.classList.remove('translate-x-full');
+    mobileMenuPanel?.classList.add('translate-x-0');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenuOverlay?.classList.remove('opacity-100');
+    mobileMenuOverlay?.classList.add('opacity-0');
+    mobileMenuPanel?.classList.remove('translate-x-0');
+    mobileMenuPanel?.classList.add('translate-x-full');
+    setTimeout(() => {
+      mobileMenu?.classList.remove('pointer-events-auto');
+      mobileMenu?.classList.add('pointer-events-none');
+    }, 300);
+    document.body.style.overflow = '';
+  }
+
+  mobileMenuButton?.addEventListener('click', openMenu);
+  mobileMenuClose?.addEventListener('click', closeMenu);
+  mobileMenuOverlay?.addEventListener('click', closeMenu);
+  
+  // Cerrar menú al hacer clic en un link
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Cerrar con tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+</script>

@@ -1,0 +1,54 @@
+---
+// Contact Form Section Component
+---
+
+<section class="py-24 relative overflow-hidden" id="contact">
+  <div class="max-w-4xl mx-auto px-6 relative z-10">
+    <div class="glass-card rounded-2xl p-8 md:p-12 border-primary/20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Initialize Transmission</h2>
+        <p class="text-slate-400">Requesting a frequency for collaboration or cosmic greetings.</p>
+      </div>
+      
+      <form class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Identity</label>
+            <input 
+              class="w-full bg-white/5 border-0 border-b-2 border-white/10 focus:border-primary focus:ring-0 transition-all text-white py-3 px-4 rounded-t-lg" 
+              placeholder="Your Name" 
+              type="text"
+            />
+          </div>
+          <div class="space-y-2">
+            <label class="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Comms Link</label>
+            <input 
+              class="w-full bg-white/5 border-0 border-b-2 border-white/10 focus:border-primary focus:ring-0 transition-all text-white py-3 px-4 rounded-t-lg" 
+              placeholder="Your Email" 
+              type="email"
+            />
+          </div>
+        </div>
+        
+        <div class="space-y-2">
+          <label class="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Transmission Data</label>
+          <textarea 
+            class="w-full bg-white/5 border-0 border-b-2 border-white/10 focus:border-primary focus:ring-0 transition-all text-white py-3 px-4 rounded-t-lg" 
+            placeholder="Your Message..." 
+            rows="4"
+          ></textarea>
+        </div>
+        
+        <div class="pt-4">
+          <button 
+            type="submit"
+            class="w-full py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg transition-all shadow-[0_0_15px_rgba(19,91,236,0.3)] hover:shadow-[0_0_25px_rgba(19,91,236,0.5)] flex items-center justify-center gap-2 group hover:cursor-pointer"
+          >
+            <span>SEND TRANSMISSION</span>
+            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

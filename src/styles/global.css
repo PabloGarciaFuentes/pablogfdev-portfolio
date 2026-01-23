@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* Smooth scroll para navegación entre secciones */
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  /* Colores personalizados - Accesibles como bg-primary, text-primary, etc. */
+  --color-primary: #135bec;
+  --color-accent: #00f2ff;
+  --color-bg-light: #f6f6f8;
+  --color-bg-dark: #0a0d14;
+  
+  /* Fuente personalizada - Accesible como font-display */
+  --font-family-display: Space Grotesk, ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(28, 31, 39, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(59, 67, 84, 0.5);
+  }
+
+  .hero-gradient {
+    background: radial-gradient(circle at 50% 50%, rgba(19, 91, 236, 0.15) 0%, rgba(10, 13, 20, 1) 100%);
+  }
+
+  .lightsaber-line {
+    box-shadow: 0 0 15px #135bec, 0 0 5px #00f2ff;
+  }
+
+  .hyperspace-hover {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  
+  .hyperspace-hover:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 0 30px rgba(19, 91, 236, 0.4);
+  }
+}

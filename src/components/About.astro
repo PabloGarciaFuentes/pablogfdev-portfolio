@@ -1,0 +1,50 @@
+---
+// About Me Section Component
+---
+
+<section class="py-24 relative" id="about">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row gap-12 items-center">
+      <div class="w-full md:w-1/2 relative">
+        <div class="aspect-square rounded-2xl overflow-hidden glass-card p-2 border-primary/30">
+          <img class="w-full h-full object-cover object-[center_15%] rounded-xl grayscale hover:grayscale-0 transition-all duration-700" src="/images/about/image.png" alt="Developer profile portrait" />
+        </div>
+        <div class="absolute -bottom-6 -right-6 p-6 glass-card rounded-2xl border-accent/30 hidden lg:block">
+          <div class="flex items-center gap-4">
+            <div class="text-4xl font-bold text-primary">06+</div>
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Years of<br/>Navigation</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="w-full md:w-1/2 space-y-8">
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold tracking-tight">The Navigator's Journey</h2>
+          <div class="h-1 w-20 bg-primary rounded-full"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 gap-4">
+          <div class="p-6 glass-card rounded-xl border-l-4 border-l-primary group hover:border-l-accent transition-all">
+            <div class="flex gap-4">
+              <span class="material-symbols-outlined text-primary text-3xl">explore</span>
+              <div>
+                <h3 class="font-bold text-lg mb-1">The Explorer</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Inspired by the vastness of the frontier, I tackle complex architectures with a cosmic perspective, seeking out new technologies and frontier solutions.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="p-6 glass-card rounded-xl border-l-4 border-l-primary group hover:border-l-accent transition-all">
+            <div class="flex gap-4">
+              <span class="material-symbols-outlined text-primary text-3xl">sailing</span>
+              <div>
+                <h3 class="font-bold text-lg mb-1">The Navigator</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Like a lighthouse keeper at night, I provide steady guidance through complex codebases, ensuring performance, reliability, and safe harbor for user data.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
