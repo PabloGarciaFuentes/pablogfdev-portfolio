@@ -1,4 +1,4 @@
-# 🚀 PablogfDev - Portfolio - Fullstack Developer
+# 🚀 PablogfDev - Portfolio - Frontend Developer
 
 Portfolio profesional desarrollado con Astro y Tailwind CSS 4, con un diseño futurista inspirado en el espacio y el mar.
 
