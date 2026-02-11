@@ -1,6 +1,7 @@
 ---
 interface Props {
   badge?: string;
+  badge2?: string;
   title1?: string;
   title2?: string;
   role?: string;
@@ -11,6 +12,7 @@ interface Props {
 
 const {
   badge = "Establishing Link...",
+  badge2 = "Link Established",
   title1 = "Hi, I'm",
   title2 = "Pablo",
   role = "Frontend Developer",
@@ -41,16 +43,19 @@ const {
 
   <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
     <div
-      class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase mb-6"
+      id="connection-badge"
+      data-badge-success={badge2}
+      class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase mb-6 transition-colors duration-500"
     >
-      <span class="relative flex h-2 w-2">
+      <span id="connection-dot" class="relative flex h-2 w-2">
         <span
-          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 transition-colors duration-500"
         ></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"
+        <span
+          class="relative inline-flex rounded-full h-2 w-2 bg-primary transition-colors duration-500"
         ></span>
       </span>
-      {badge}
+      <span id="connection-text">{badge}</span>
     </div>
 
     <h1
@@ -87,3 +92,40 @@ const {
   >
   </div>
 </section>
+
+<script>
+  function initConnectionBadge() {
+    const badge = document.getElementById("connection-badge");
+    const dot = document.getElementById("connection-dot");
+    const text = document.getElementById("connection-text");
+
+    if (badge && dot && text && badge.dataset.badgeSuccess) {
+      setTimeout(() => {
+        // Change Text
+        text.textContent = badge.dataset.badgeSuccess || "";
+
+        // Change Badge Colors
+        badge.classList.remove(
+          "bg-primary/10",
+          "border-primary/20",
+          "text-primary",
+        );
+        badge.classList.add(
+          "bg-emerald-500/10",
+          "border-emerald-500/20",
+          "text-emerald-500",
+        );
+
+        // Change Dot Colors
+        const dots = dot.querySelectorAll("span");
+        dots.forEach((d) => {
+          d.classList.remove("bg-primary");
+          d.classList.add("bg-emerald-500");
+        });
+      }, 2000);
+    }
+  }
+
+  // Run on initial load and View Transitions navigation
+  document.addEventListener("astro:page-load", initConnectionBadge);
+</script>
