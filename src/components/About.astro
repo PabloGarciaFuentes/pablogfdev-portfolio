@@ -1,45 +1,87 @@
 ---
-// About Me Section Component
+interface Props {
+  years?: string;
+  yearsLabel?: string;
+  title?: string;
+  role1Title?: string;
+  role1Desc?: string;
+  role2Title?: string;
+  role2Desc?: string;
+}
+
+const {
+  years = "06+",
+  yearsLabel = "Years of",
+  title = "The Navigator's Journey",
+  role1Title = "Frontend Specialist",
+  role1Desc = "5+ years building scalable user interfaces with React, Next.js, Astro, and Vue.js. Passionate about component architecture, state management, and creating exceptional user experiences.",
+  role2Title = "Code Quality Advocate",
+  role2Desc = "Expert in modern frontend tooling: TypeScript, Redux, Cypress testing, and performance optimization. I write clean, maintainable code that scales with your project.",
+} = Astro.props;
 ---
 
 <section class="py-24 relative" id="about">
   <div class="max-w-6xl mx-auto px-6">
     <div class="flex flex-col md:flex-row gap-12 items-center">
       <div class="w-full md:w-1/2 relative">
-        <div class="aspect-square rounded-2xl overflow-hidden glass-card p-2 border-primary/30">
-          <img class="w-full h-full object-cover object-[center_15%] rounded-xl grayscale hover:grayscale-0 transition-all duration-700" src="/images/about/image.png" alt="Developer profile portrait" />
+        <div
+          class="aspect-square rounded-2xl overflow-hidden glass-card p-2 border-primary/30"
+        >
+          <img
+            class="w-full h-full object-cover object-[center_15%] rounded-xl grayscale hover:grayscale-0 transition-all duration-700"
+            src="/images/about/image.png"
+            alt="Developer profile portrait"
+          />
         </div>
-        <div class="absolute -bottom-6 -right-6 p-6 glass-card rounded-2xl border-accent/30 hidden lg:block">
+        <div
+          class="absolute -bottom-6 -right-6 p-6 glass-card rounded-2xl border-accent/30 hidden lg:block"
+        >
           <div class="flex items-center gap-4">
-            <div class="text-4xl font-bold text-primary">06+</div>
-            <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Years of<br/>Navigation</div>
+            <div class="text-4xl font-bold text-primary">{years}</div>
+            <div
+              class="text-xs font-bold text-slate-400 uppercase tracking-widest"
+            >
+              {yearsLabel}<br />Navigation
+            </div>
           </div>
         </div>
       </div>
-      
+
       <div class="w-full md:w-1/2 space-y-8">
         <div class="space-y-4">
-          <h2 class="text-3xl font-bold tracking-tight">The Navigator's Journey</h2>
+          <h2 class="text-3xl font-bold tracking-tight">{title}</h2>
           <div class="h-1 w-20 bg-primary rounded-full"></div>
         </div>
-        
+
         <div class="grid grid-cols-1 gap-4">
-          <div class="p-6 glass-card rounded-xl border-l-4 border-l-primary group hover:border-l-accent transition-all">
+          <div
+            class="p-6 glass-card rounded-xl border-l-4 border-l-primary group hover:border-l-accent transition-all"
+          >
             <div class="flex gap-4">
-              <span class="material-symbols-outlined text-primary text-3xl">explore</span>
+              <span class="material-symbols-outlined text-primary text-3xl"
+                >explore</span
+              >
               <div>
-                <h3 class="font-bold text-lg mb-1">Frontend Specialist</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">5+ years building scalable user interfaces with React, Next.js, Astro, and Vue.js. Passionate about component architecture, state management, and creating exceptional user experiences.</p>
+                <h3 class="font-bold text-lg mb-1">{role1Title}</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  {role1Desc}
+                </p>
               </div>
             </div>
           </div>
-          
-          <div class="p-6 glass-card rounded-xl border-l-4 border-l-primary group hover:border-l-accent transition-all">
+
+          <div
+            class="p-6 glass-card rounded-xl border-l-4 border-l-primary group hover:border-l-accent transition-all"
+          >
             <div class="flex gap-4">
-              <span class="material-symbols-outlined text-primary text-3xl">sailing</span>
+              <span class="material-symbols-outlined text-primary text-3xl"
+                >sailing</span
+              >
               <div>
-                <h3 class="font-bold text-lg mb-1">Code Quality Advocate</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Expert in modern frontend tooling: TypeScript, Redux, Cypress testing, and performance optimization. I write clean, maintainable code that scales with your project.</p>
+                <h3 class="font-bold text-lg mb-1">{role2Title}</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  {role2Desc}
+                </p>
               </div>
             </div>
           </div>

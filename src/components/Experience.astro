@@ -1,75 +1,86 @@
 ---
-// Experience Timeline Section Component
+interface Props {
+  title?: string;
+  items?: {
+    date: string;
+    role: string;
+    company: string;
+    description: string;
+  }[];
+}
+
+const {
+  title = "Experience Timeline",
+  items = [
+    {
+      date: "MARCH 2025 — PRESENT",
+      role: "Frontend Developer",
+      company: "MacMillan Studio",
+      description:
+        "Frontend development with Astro and Vue.js. Responsive design, performance optimization (Lighthouse 90+), and WordPress headless CMS integration.",
+    },
+    {
+      date: "AUGUST 2020 — MARCH 2025",
+      role: "Frontend Developer",
+      company: "Hiniestic",
+      description:
+        "React applications with hooks, Redux, Redux-Saga. Cypress E2E testing, responsive interfaces with Sass & styled-components, REST API integration.",
+    },
+    {
+      date: "MAY 2020",
+      role: "FullStack Bootcamp",
+      company: "CodeSpace Academy",
+      description:
+        "Intensive training in modern web development: React, Node.js, databases, and agile methodologies. Foundation for my frontend specialization.",
+    },
+  ],
+} = Astro.props;
 ---
 
 <section class="py-24 bg-black/20" id="experience">
   <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-3xl font-bold tracking-tight mb-16 text-center">Experience Timeline</h2>
-    
+    <h2 class="text-3xl font-bold tracking-tight mb-16 text-center">{title}</h2>
+
     <div class="relative">
       <!-- Lightsaber Timeline Line -->
-      <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-primary lightsaber-line -translate-x-1/2"></div>
-      
+      <div
+        class="absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-primary lightsaber-line -translate-x-1/2"
+      >
+      </div>
+
       <div class="space-y-12">
-        <!-- Item 1 -->
-        <div class="relative flex flex-col md:flex-row items-center justify-between">
-          <div class="w-full md:w-[45%] mb-4 md:mb-0">
-            <div class="p-6 glass-card rounded-xl text-right hidden md:block">
-              <span class="text-primary font-bold text-sm">MARCH 2025 — PRESENT</span>
-              <h3 class="text-xl font-bold mt-1">Frontend Developer</h3>
-              <p class="text-slate-400 text-sm mt-2">MacMillan Studio</p>
+        {
+          items.map((item, index) => (
+            <div
+              class={`relative flex flex-col ${index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"} items-center justify-between`}
+            >
+              <div class="w-full md:w-[45%] mb-4 md:mb-0">
+                <div
+                  class={`p-6 glass-card rounded-xl ${index % 2 !== 0 ? "text-left" : "text-right"} hidden md:block`}
+                >
+                  <span class="text-primary font-bold text-sm">
+                    {item.date}
+                  </span>
+                  <h3 class="text-xl font-bold mt-1">{item.role}</h3>
+                  <p class="text-slate-400 text-sm mt-2">{item.company}</p>
+                </div>
+                <div class="p-6 glass-card rounded-xl md:hidden">
+                  <span class="text-primary font-bold text-sm">
+                    {item.date}
+                  </span>
+                  <h3 class="text-xl font-bold mt-1">{item.role}</h3>
+                  <p class="text-slate-400 text-sm mt-2">{item.description}</p>
+                </div>
+              </div>
+              <div class="absolute left-0 md:left-1/2 size-4 bg-primary rounded-full -translate-x-1/2 z-10 border-4 border-bg-dark shadow-[0_0_10px_#135bec]" />
+              <div
+                class={`w-full md:w-[45%] ${index % 2 !== 0 ? "md:pr-10 text-right" : "md:pl-10"} hidden md:block`}
+              >
+                <p class="text-slate-400 text-sm">{item.description}</p>
+              </div>
             </div>
-            <div class="p-6 glass-card rounded-xl md:hidden">
-              <span class="text-primary font-bold text-sm">MARCH 2025 — PRESENT</span>
-              <h3 class="text-xl font-bold mt-1">Frontend Developer</h3>
-              <p class="text-slate-400 text-sm mt-2">Frontend development with Astro and Vue.js. Responsive design, performance optimization (Lighthouse 90+), and WordPress headless CMS integration.</p>
-            </div>
-          </div>
-          <div class="absolute left-0 md:left-1/2 size-4 bg-primary rounded-full -translate-x-1/2 z-10 border-4 border-bg-dark shadow-[0_0_10px_#135bec]"></div>
-          <div class="w-full md:w-[45%] md:pl-10 hidden md:block">
-            <p class="text-slate-400 text-sm">Frontend development with Astro and Vue.js. Responsive design, performance optimization (Lighthouse 90+), and WordPress headless CMS integration.</p>
-          </div>
-        </div>
-        
-        <!-- Item 2 -->
-        <div class="relative flex flex-col md:flex-row-reverse items-center justify-between">
-          <div class="w-full md:w-[45%] mb-4 md:mb-0">
-            <div class="p-6 glass-card rounded-xl text-left hidden md:block">
-              <span class="text-primary font-bold text-sm">AUGUST 2020 — MARCH 2025</span>
-              <h3 class="text-xl font-bold mt-1">Frontend Developer</h3>
-              <p class="text-slate-400 text-sm mt-2">Hiniestic</p>
-            </div>
-            <div class="p-6 glass-card rounded-xl md:hidden">
-              <span class="text-primary font-bold text-sm">AUGUST 2020 — MARCH 2025</span>
-              <h3 class="text-xl font-bold mt-1">Frontend Developer</h3>
-              <p class="text-slate-400 text-sm mt-2">React applications with hooks, Redux, Redux-Saga. Cypress E2E testing, responsive interfaces with Sass & styled-components, REST API integration.</p>
-            </div>
-          </div>
-          <div class="absolute left-0 md:left-1/2 size-4 bg-primary rounded-full -translate-x-1/2 z-10 border-4 border-bg-dark shadow-[0_0_10px_#135bec]"></div>
-          <div class="w-full md:w-[45%] md:pr-10 hidden md:block text-right">
-            <p class="text-slate-400 text-sm">React applications with hooks, Redux, Redux-Saga. Cypress E2E testing, responsive interfaces with Sass & styled-components, REST API integration.</p>
-          </div>
-        </div>
-        
-        <!-- Item 3 -->
-        <div class="relative flex flex-col md:flex-row items-center justify-between">
-          <div class="w-full md:w-[45%] mb-4 md:mb-0">
-            <div class="p-6 glass-card rounded-xl text-right hidden md:block">
-              <span class="text-primary font-bold text-sm">MAY 2020</span>
-              <h3 class="text-xl font-bold mt-1">FullStack Bootcamp</h3>
-              <p class="text-slate-400 text-sm mt-2">CodeSpace Academy</p>
-            </div>
-            <div class="p-6 glass-card rounded-xl md:hidden">
-              <span class="text-primary font-bold text-sm">MAY 2020</span>
-              <h3 class="text-xl font-bold mt-1">FullStack Bootcamp</h3>
-              <p class="text-slate-400 text-sm mt-2">Intensive training in modern web development: React, Node.js, databases, and agile methodologies. Foundation for my frontend specialization.</p>
-            </div>
-          </div>
-          <div class="absolute left-0 md:left-1/2 size-4 bg-primary rounded-full -translate-x-1/2 z-10 border-4 border-bg-dark shadow-[0_0_10px_#135bec]"></div>
-          <div class="w-full md:w-[45%] md:pl-10 hidden md:block">
-            <p class="text-slate-400 text-sm">Intensive training in modern web development: React, Node.js, databases, and agile methodologies. Foundation for my frontend specialization.</p>
-          </div>
-        </div>
+          ))
+        }
       </div>
     </div>
   </div>

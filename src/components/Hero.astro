@@ -1,43 +1,89 @@
 ---
-// Hero Section Component
+interface Props {
+  badge?: string;
+  title1?: string;
+  title2?: string;
+  role?: string;
+  description?: string;
+  ctaPrimary?: string;
+  ctaSecondary?: string;
+}
+
+const {
+  badge = "Establishing Link...",
+  title1 = "Hi, I'm",
+  title2 = "Pablo",
+  role = "Frontend Developer",
+  description = "Crafting exceptional user interfaces with React, Next.js, and Astro. Building scalable, high-performance web experiences with clean code and modern technologies.",
+  ctaPrimary = "Initialize Transmission",
+  ctaSecondary = "Explore Mission Log",
+} = Astro.props;
 ---
 
-<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-  <div class="absolute inset-0 z-0 bg-cover bg-center" style='background-image: linear-gradient(rgba(10, 13, 20, 0.8), rgba(10, 13, 20, 0.9)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAnPHI-xcSAxrgmv4KzPJ0YNybkSXqaFVJrFtRhsnCJ9BWGXKzoJcKnbyBt6ls-aZ0E3j-f4TuD2ABMTQ6Xh7rb5AQMkMU8FMe-SF6mSAhgZRJyUbp18nniVaYwhoRhln3kX0DrZ4iboVPYeQ4Mnzdgx_9ruHck63K6cQlZM2CpEpDmRC-NrDmOmWgeXhQWEWc92CVHMm0EfAvHNIsr63EVbJS1vSPErgtc0rhNy9dAIaloCRQRQwW_Hpoau0RHLahAfSMp7L9JGA");'></div>
-  
+<section
+  class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
+>
+  <div
+    class="absolute inset-0 z-0 bg-cover bg-center"
+    style='background-image: linear-gradient(rgba(10, 13, 20, 0.8), rgba(10, 13, 20, 0.9)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAnPHI-xcSAxrgmv4KzPJ0YNybkSXqaFVJrFtRhsnCJ9BWGXKzoJcKnbyBt6ls-aZ0E3j-f4TuD2ABMTQ6Xh7rb5AQMkMU8FMe-SF6mSAhgZRJyUbp18nniVaYwhoRhln3kX0DrZ4iboVPYeQ4Mnzdgx_9ruHck63K6cQlZM2CpEpDmRC-NrDmOmWgeXhQWEWc92CVHMm0EfAvHNIsr63EVbJS1vSPErgtc0rhNy9dAIaloCRQRQwW_Hpoau0RHLahAfSMp7L9JGA");'
+  >
+  </div>
+
   <!-- Decorative Light Beam -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-30 pointer-events-none">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[2px] bg-primary blur-xl rotate-[-35deg] lightsaber-line"></div>
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-30 pointer-events-none"
+  >
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[2px] bg-primary blur-xl rotate-[-35deg] lightsaber-line"
+    >
+    </div>
   </div>
-  
+
   <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase mb-6">
+    <div
+      class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase mb-6"
+    >
       <span class="relative flex h-2 w-2">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+        <span
+          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+        ></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"
+        ></span>
       </span>
-      Establishing Link...
+      {badge}
     </div>
-    
-    <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
-      Hi, I'm <span class="text-primary">Pablo</span>,<br/>Frontend Developer
+
+    <h1
+      class="text-5xl md:text-7xl font-bold leading-tight tracking-tighter mb-6 bg-clip-text text-transparent bg-linear-to-b from-white to-white/60"
+    >
+      {title1}
+      <span class="text-primary">{title2}</span>,<br />{role}
     </h1>
-    
-    <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-      Crafting exceptional user interfaces with React, Next.js, and Astro. Building scalable, high-performance web experiences with clean code and modern technologies.
+
+    <p
+      class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+    >
+      {description}
     </p>
-    
+
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <button class="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary/90 rounded-lg font-bold text-white transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+      <button
+        class="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary/90 rounded-lg font-bold text-white transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2"
+      >
         <span class="material-symbols-outlined">sensors</span>
-        Initialize Transmission
+        {ctaPrimary}
       </button>
-      <button class="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg font-bold text-white transition-all flex items-center justify-center gap-2">
-        Explore Mission Log
+      <button
+        class="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg font-bold text-white transition-all flex items-center justify-center gap-2"
+      >
+        {ctaSecondary}
       </button>
     </div>
   </div>
-  
+
   <!-- Wave Transition -->
-  <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-bg-dark to-transparent opacity-50"></div>
+  <div
+    class="absolute bottom-0 left-0 w-full h-24 bg-linear-to-t from-bg-dark to-transparent opacity-50"
+  >
+  </div>
 </section>

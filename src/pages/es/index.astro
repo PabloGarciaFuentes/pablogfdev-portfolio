@@ -1,0 +1,102 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Hero from "../../components/Hero.astro";
+import About from "../../components/About.astro";
+import Experience from "../../components/Experience.astro";
+import TechStack from "../../components/TechStack.astro";
+import Projects from "../../components/Projects.astro";
+import Contact from "../../components/Contact.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout title="Developer Portfolio | Star & Sea">
+  <Navigation />
+  <Hero
+    badge="Estableciendo Enlace..."
+    title1="Hola, soy"
+    role="Desarrollador Frontend"
+    description="Creando interfaces de usuario excepcionales con React, Next.js y Astro. Construyendo experiencias web escalables y de alto rendimiento con código limpio y tecnologías modernas."
+    ctaPrimary="Iniciar Transmisión"
+    ctaSecondary="Explorar Registro"
+  />
+  <About
+    years="06+"
+    yearsLabel="Años de"
+    title="La Travesía del Navegante"
+    role1Title="Especialista Frontend"
+    role1Desc="Más de 5 años construyendo interfaces de usuario escalables con React, Next.js, Astro y Vue.js. Apasionado por la arquitectura de componentes, gestión de estado y creación de experiencias de usuario excepcionales."
+    role2Title="Defensor de la Calidad"
+    role2Desc="Experto en herramientas frontend modernas: TypeScript, Redux, pruebas con Cypress y optimización de rendimiento. Escribo código limpio y mantenible que escala con tu proyecto."
+  />
+  <Experience
+    title="Cronología de Experiencia"
+    items={[
+      {
+        date: "MARZO 2025 — PRESENTE",
+        role: "Desarrollador Frontend",
+        company: "MacMillan Studio",
+        description:
+          "Desarrollo frontend con Astro y Vue.js. Diseño responsivo, optimización de rendimiento (Lighthouse 90+) e integración con WordPress headless CMS.",
+      },
+      {
+        date: "AGOSTO 2020 — MARZO 2025",
+        role: "Desarrollador Frontend",
+        company: "Hiniestic",
+        description:
+          "Aplicaciones React con hooks, Redux, Redux-Saga. Pruebas E2E con Cypress, interfaces responsivas con Sass y styled-components, integración con API REST.",
+      },
+      {
+        date: "MAYO 2020",
+        role: "Bootcamp FullStack",
+        company: "CodeSpace Academy",
+        description:
+          "Formación intensiva en desarrollo web moderno: React, Node.js, bases de datos y metodologías ágiles. Fundamentos para mi especialización frontend.",
+      },
+    ]}
+  />
+  <TechStack title="Constelación Tecnológica" />
+  <Projects
+    title="Misiones Activas"
+    subtitle="Proyectos recientes de la nave espacial."
+    viewAllText="VER TODO"
+    viewMissionText="VER MISION"
+    sourceText="FUENTE"
+    previewText="VISTA PREVIA"
+    projects={[
+      {
+        title: "DUNKIN'",
+        description:
+          "Sitio web oficial de Dunkin' España. Desarrollo full-stack con gestión de productos, buscador de tiendas y noticias.",
+        image: "/images/projects/dunkin.png",
+        tags: ["SYMFONY", "PHP", "WORDPRESS"],
+      },
+      {
+        title: "DE GAZA AL MUNDO",
+        description:
+          "Plataforma solidaria con galería de imágenes de la asociación. Incluye instrucciones de colaboración y venta de artesanía palestina.",
+        image: "/images/projects/de_gaza_al_mundo.png",
+        tags: ["ASTRO", "TAILWIND", "JS"],
+      },
+      {
+        title: "BIKE PHILOSOPHY",
+        description:
+          "Tienda online especializada en ciclismo en Málaga. E-commerce completo con gestión de inventario y taller.",
+        image: "/images/projects/bikephy.png",
+        tags: ["REACT", "JS", "SYMFONY", "API-PLATFORM"],
+      },
+    ]}
+  />
+  <Contact
+    title="Iniciar Transmisión"
+    subtitle="Solicitando frecuencia para colaboración o saludos cósmicos."
+    nameLabel="Identidad"
+    namePlaceholder="Tu Nombre"
+    emailLabel="Enlace de Comunicación"
+    emailPlaceholder="Tu Email"
+    messageLabel="Datos de Transmisión"
+    messagePlaceholder="Tu Mensaje..."
+    buttonText="ENVIAR TRANSMISIÓN"
+  />
+  <Footer copyright="© 2026 Construido con polvo de estrellas y bruma marina" />
+</Layout>
